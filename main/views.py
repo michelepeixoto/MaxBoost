@@ -22,3 +22,19 @@ def signup(request):
         signin_form = SignInForm()
         return render(request, 'signup.html', {'signup_form': signup_form,
                                                'signin_form': signin_form})
+
+
+def hire(request):
+    return render(request, 'hire.html')
+
+
+def messages(request):
+    return render(request, 'messages.html')
+
+
+def play(request):
+    return render(request, 'play.html')
+
+
+def profile(request):
+    return render(request, 'profile.html')

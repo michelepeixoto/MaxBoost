@@ -23,7 +23,11 @@ from django.views.static import serve
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^$', views.index),
-    url(r'signup', views.signup)
+    url(r'signup', views.signup),
+    url(r'hire', views.profile),
+    url(r'messages', views.profile),
+    url(r'play', views.profile),
+    url(r'profile', views.profile),
 ]
 
 if settings.DEBUG:

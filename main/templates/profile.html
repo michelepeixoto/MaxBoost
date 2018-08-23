@@ -1,10 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% load static %}
+{% load filter_query from tags %}
 
-</body>
-</html>
+<!-- use this template to make new pages -->
+
+{% block title %} - <!-- page title -->{% endblock %}
+
+{% block content %}
+<!-- insert html -->
+{% endblock %}

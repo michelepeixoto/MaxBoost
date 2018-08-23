@@ -15,9 +15,15 @@
         <li class="li2"><a href="/hire">Hire</a></li>
         <li class="li3"><a href="/">
             <h1 id="main-h1">MaxBoost</h1></a></li>
+        <!-- not working, need to implement signin feature -->
         {% if signed_in == True %}
-            <li class="li4"><a href="/messages">Hire</a></li>
-            <li class="li5"><a href="/profile">Hire</a></li>
+            <li class="li4">
+                <a href="/messages">
+                    <img src="static/img/icons/set1/message.png" class="y-btn">
+                </a>
+            </li>
+            <li class="li5"><a href="/profile">Profile</a></li>
+        <!-- not working, need to implement signin feature -->
         {% else %}
             <li class="li4" onclick="showSignin()"><p id="signin-btn">Sign In</p></li>
             <li class="li5"><a href="/signup">Sign Up</a></li>

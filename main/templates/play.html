@@ -1,10 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% load static %}
+{% load filter_query from tags %}
 
-</body>
-</html>
+{% block title %} - Play{% endblock %}
+
+{% block content %}
+<!-- change to an image/gif? --><h1>Play</h1><!-- change to an image/gif? -->
+<form id="play-form" action="/play" method="post">
+    {% csrf_token %}
+    {% for field in play_form %}
+    <div class="form-field">
+        {{ field }}
+    </div>
+    {% endfor %}
+    <button type="submit" class="submit-btn">
+        <img src="static/img/icons/set2/Y.png" class="y-btn">
+    </button>
+</form>
+{% endblock %}

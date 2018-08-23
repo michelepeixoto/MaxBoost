@@ -10,12 +10,6 @@
             <div class="form-field">
                 {{ field }}
             </div>
-            <div class="error-msg">
-                {{ field.errors }}
-            </div>
-        {% endfor %}
-        {% for hidden in signup_form.hidden_fields %}
-            <div class="error-msg">{{ hidden }}</div>
         {% endfor %}
         <button type="submit" class="submit-btn">
             <img src="static/img/icons/set2/Y.png" class="y-btn">
