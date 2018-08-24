@@ -6,6 +6,7 @@
 
 {% block content %}
 <!-- change to an image/gif? --><h1>Play</h1><!-- change to an image/gif? -->
+<h3>Find people to play with by game</h3>
 <form id="play-form" action="/play" method="post">
     {% csrf_token %}
     {% for field in play_form %}

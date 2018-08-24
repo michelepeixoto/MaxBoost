@@ -1,5 +1,17 @@
 from django import forms
-from .models import User
+from .models import User, Game
+
+
+def get_all_games():
+    game_choices = [('','select a game'),]
+    all_games = Game.objects.all()
+    for i in range(len(all_games)):
+        game_choices.append((i, all_games[i].title))
+    return game_choices
+
+
+GAMES_LIST = get_all_games()
+
 
 class SignUpForm(forms.ModelForm):
     class Meta:
@@ -38,3 +50,8 @@ class SignInForm(forms.Form):
                                 widget=forms.TextInput(attrs={'placeholder': 'password',
                                                               'style': style}),
                                 required=True)
+
+
+class PlayForm(forms.Form):
+    game_title = forms.ChoiceField(choices=GAMES_LIST,
+                                   widget=forms.Select())

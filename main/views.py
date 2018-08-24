@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .forms import SignInForm, SignUpForm
+from .forms import SignInForm, SignUpForm, PlayForm
 from .models import Game
 
 
@@ -33,7 +33,16 @@ def messages(request):
 
 
 def play(request):
-    return render(request, 'play.html')
+    if request.method == 'POST':
+        form = PlayForm(request.POST)
+        if form.is_valid():
+            # return list of users playing form.cleaned_data['game_title']
+            return render(request, 'play.html', {'play_form' : form})
+        else:
+            return render(request, 'play.html', {'play_form' : form})
+    else:
+        form = PlayForm()
+    return render(request, 'play.html', {'play_form' : form})
 
 
 def profile(request):
