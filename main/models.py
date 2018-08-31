@@ -8,18 +8,18 @@ class User(models.Model):
     password = models.CharField(max_length=44, verbose_name='password')
     password2 = models.CharField(max_length=44, verbose_name='password2')
     email = models.EmailField(max_length=254, verbose_name='email')
-    picture = models.FileField(storage=FileSystemStorage(location=settings.MEDIA_ROOT),
-                               upload_to='profile_pics',
-                               default="settings.MEDIA_ROOT/profile_pics/default_profile_pic.png")
-    #friends = models.CharField(max_length=800)
+    picture = models.ImageField(upload_to='profile_pics',
+                                default="/profile_pics/default_profile_pic.png")
+    #friends = models.CharField(max_length=800) should be a list
     is_online = models.BooleanField(default=False)
-    time_online = models.FloatField(default="0.0") #amount in minutes
+    time_online = models.FloatField(default="0.0") # amount in minutes
     game_playing = models.CharField(max_length=500, blank=True)
     is_booster = models.BooleanField()
     hire_price = models.FloatField(default="0.00")
 
     def __str__(self):
         return self.username
+
 
 class Game(models.Model):
     title = models.CharField(max_length=80)
@@ -30,7 +30,10 @@ class Game(models.Model):
 
 
 class GameStat(models.Model):
-    game_title = models.CharField(max_length=80)
+    game_title = models.ForeignKey('Game',
+                                   db_column='title',
+                                   related_name='stat',
+                                   on_delete=models.PROTECT)
     username = models.CharField(max_length=22)
     times_played = models.IntegerField()
     hours_played = models.DurationField()
@@ -38,7 +41,7 @@ class GameStat(models.Model):
     # wins = models.IntegerField() -> probably need game api, otherwise would have to ask user for manual input
 
     def __str__(self):
-        return "{username}'s stats for {game_title}".format(self.username, self.game_title)
+        return "{}'s stats for {}".format(self.username, self.game_title)
 
 
 class Message(models.Model):

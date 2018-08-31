@@ -51,8 +51,6 @@ function hideSignin(){
     document.getElementById("signin-btn").style.backgroundColor = "transparent";
 }
 
-
-
 function moveItems(items, dir){
     var pic_urls = document.getElementById("game-pic-urls").innerHTML.replace(new RegExp("\\s", 'g'), "").split("game_pics");
     if (items == "games"){
@@ -81,4 +79,13 @@ function moveItems(items, dir){
             }
         }
     }
+}
+
+function showStats(stat_table){
+    stat_tables = document.getElementsByClassName("stat-table");
+    for (i=0; i<stat_tables.length; i++){
+        stat_tables[i].style.display = "none";
+    }
+    show_table = document.getElementById(stat_table);
+    show_table.style.display = "inherit";
 }

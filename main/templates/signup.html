@@ -4,15 +4,15 @@
 {% block title %} - Sign Up{% endblock %}
 
 {% block content %}
-    <form id="signup-form" action="/signup" method="post">
-        {% csrf_token %}
-        {% for field in signup_form %}
-            <div class="form-field">
-                {{ field }}
-            </div>
-        {% endfor %}
-        <button type="submit" class="submit-btn">
-            <img src="static/img/icons/set2/Y.png" class="y-btn">
-        </button>
-    </form>
+<form id="signup-form" action="/signup" method="post">
+    {% csrf_token %}
+    {% for field in signup_form %}
+        <div class="form-field">
+            {{ field }}
+        </div>
+    {% endfor %}
+    <button type="submit" class="submit-btn">
+        <img src="static/img/icons/set2/Y.png" class="y-btn">
+    </button>
+</form>
 {% endblock %}

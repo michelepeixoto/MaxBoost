@@ -19,7 +19,7 @@
         {% if signed_in == True %}
             <li class="li4">
                 <a href="/messages">
-                    <img src="static/img/icons/set1/message.png" class="y-btn">
+                    <img src="/static/img/icons/set1/message.png" class="y-btn">
                 </a>
             </li>
             <li class="li5"><a href="/profile">Profile</a></li>
@@ -28,10 +28,11 @@
             <li class="li4" onclick="showSignin()"><p id="signin-btn">Sign In</p></li>
             <li class="li5"><a href="/signup">Sign Up</a></li>
             <div id="signin">
-                {{ signin_form }}
-                <br>
-                <img src="static/img/icons/set2/Y.png" class="y-btn">
-                <img src="static/img/icons/set2/N.png" class="n-btn" onclick="hideSignin()">
+            {% for field in signin_form %}
+                <p>{{ field }}</p>
+            {% endfor %}
+                <img src="/static/img/icons/set2/Y.png" class="y-btn">
+                <img src="/static/img/icons/set2/N.png" class="n-btn" onclick="hideSignin()">
             </div>
         {% endif %}
     </ul>
@@ -41,10 +42,10 @@
         {% block content %}{% endblock %}
     </div>
     <div id="ppl-online" onclick="showOnline()">
-        <p>1 online</p><img src="static/img/icons/set2/online.png" id="online-icon">
+        <p>1 online</p><img src="/static/img/icons/set2/online.png" id="online-icon">
     </div>
     <div id="show-online-btns">
-        <img src="static/img/icons/set2/N.png" id="online-clsBtn" onclick="hideOnline()" />
+        <img src="/static/img/icons/set2/N.png" id="online-clsBtn" onclick="hideOnline()" />
     </div>
     <div id="show-online">
         <h4>your list</h4>

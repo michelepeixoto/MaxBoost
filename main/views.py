@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .forms import SignInForm, SignUpForm, PlayForm
-from .models import Game
+from .models import Game, User, GameStat
 
 
 def index(request):
@@ -46,4 +46,19 @@ def play(request):
 
 
 def profile(request):
-    return render(request, 'profile.html')
+    user = User.objects.get(username='test') # change this to username from request
+    user_stats = GameStat.objects.filter(username='test')
+    game_count = 0
+    highest_game_count = 0
+    most_played = ""
+    for stat in user_stats:
+        game_count = stat.times_played
+        if game_count > highest_game_count:
+            highest_game_count = game_count
+            most_played = stat.game_title
+    most_played = Game.objects.get(title=most_played).picture
+    signin_form = SignInForm()
+    return render(request, 'profile.html', {'user': user,
+                                            'user_stats': user_stats,
+                                            'most_played': most_played,
+                                            'signin_form': signin_form})

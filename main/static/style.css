@@ -97,9 +97,7 @@ h2 {
     width: 60px;
 }
 /* sign in ----------------------------------- */
-
 /* sign up style set in forms.py */
-
 /* menu ------------------------------------------------------------------ */
 
 
@@ -247,8 +245,66 @@ h2 {
 #top-hir3, #most-pl3 {
     margin-right: 5%;
 }
-
 /* index ---------------------------------------------------------------- */
+
+/* profile -------------------------------------------------------------- */
+#profile-header {
+    padding: 0 60px 0 60px;
+    height: 150px;
+    padding: 0;
+}
+
+#profile-pic {
+    width: 40px;
+    margin-right: 40px;
+}
+
+#username {
+}
+
+.user-status {
+    width: 20px;
+    margin-left: 20px;
+}
+
+.most-played {
+    height: 130px;
+    overflow: hidden;
+    padding: 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.most-played-border {
+    height: 180px;
+    transform: rotate(90deg);
+    margin: -25px;
+}
+
+#game-stats{
+    padding: 40px;
+}
+
+.stat-tab {
+    float: left;
+    padding: 5px;
+    margin-right: 5px;
+    border-style: solid;
+    border-color: #d8d8d8;
+    border-width: thin;
+    border-radius: 10px;
+}
+
+.stat-tab:hover {
+    cursor: pointer;
+}
+
+.stat-table {
+    position: absolute;
+    margin-top: 10px;
+}
+/* profile -------------------------------------------------------------- */
+
 
 
 /* responsiveness ------------------------------------------------------- */

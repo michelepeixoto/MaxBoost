@@ -27,7 +27,7 @@ urlpatterns = [
     url(r'hire', views.hire),
     url(r'messages', views.messages),
     url(r'play', views.play),
-    url(r'profile', views.profile),
+    url(r'profile/', views.profile),
 ]
 
 if settings.DEBUG:

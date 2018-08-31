@@ -5,34 +5,34 @@
 {% block title %} - Home{% endblock %}
 
 {% block content %}
-    <h2>Top Hired</h2>
-    <div id="top-hired">
-        <div id="top-hirL"><img src="static/img/icons/set2/L.png" class="l-arrow"></div>
-        <div id="top-hir1" class="highlight"></div>
-        <div id="top-hir2" class="highlight"></div>
-        <div id="top-hir3" class="highlight"></div>
-        <div id="top-hirR"><img src="static/img/icons/set2/R.png" class="r-arrow"></div>
+<h2>Top Hired</h2>
+<div id="top-hired">
+    <div id="top-hirL"><img src="static/img/icons/set2/L.png" class="l-arrow"></div>
+    <div id="top-hir1" class="highlight"></div>
+    <div id="top-hir2" class="highlight"></div>
+    <div id="top-hir3" class="highlight"></div>
+    <div id="top-hirR"><img src="static/img/icons/set2/R.png" class="r-arrow"></div>
+</div>
+<h2>Most Played Games</h2>
+<div id="game-pic-urls" style="display: none;">
+    {% for game in games.all %}
+        {{ game.picture }}
+    {% endfor %}
+</div>
+<div id="most-played">
+    <div id="most-plL"><img src="static/img/icons/set2/L.png" class="l-arrow" onclick="moveItems('games', 'left')"></div>
+    <div id="most-pl1" class="highlight">
+        {% filter_query games id=1 as game1 %}
+        <img src="{{ game1.get.picture.url }}" class="featured game">
     </div>
-    <h2>Most Played Games</h2>
-    <div id="game-pic-urls" style="display: none;">
-        {% for game in games.all %}
-            {{ game.picture }}
-        {% endfor %}
+    <div id="most-pl2" class="highlight">
+        {% filter_query games id=2 as game2 %}
+        <img src="{{ game2.get.picture.url }}" class="featured game">
     </div>
-    <div id="most-played">
-        <div id="most-plL"><img src="static/img/icons/set2/L.png" class="l-arrow" onclick="moveItems('games', 'left')"></div>
-        <div id="most-pl1" class="highlight">
-            {% filter_query games id=1 as game1 %}
-            <img src="{{ game1.get.picture.url }}" class="featured game">
-        </div>
-        <div id="most-pl2" class="highlight">
-            {% filter_query games id=2 as game2 %}
-            <img src="{{ game2.get.picture.url }}" class="featured game">
-        </div>
-        <div id="most-pl3" class="highlight">
-            {% filter_query games id=3 as game3 %}
-            <img src="{{ game3.get.picture.url }}" class="featured game">
-        </div>
-        <div id="most-plR"><img src="static/img/icons/set2/R.png" class="r-arrow" onclick="moveItems('games', 'right')"></div>
+    <div id="most-pl3" class="highlight">
+        {% filter_query games id=3 as game3 %}
+        <img src="{{ game3.get.picture.url }}" class="featured game">
     </div>
+    <div id="most-plR"><img src="static/img/icons/set2/R.png" class="r-arrow" onclick="moveItems('games', 'right')"></div>
+</div>
 {% endblock %}

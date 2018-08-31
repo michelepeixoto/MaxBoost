@@ -2,10 +2,43 @@
 {% load static %}
 {% load filter_query from tags %}
 
-<!-- use this template to make new pages -->
-
-{% block title %} - <!-- page title -->{% endblock %}
+{% block title %} - {{ user.username }}{% endblock %}
 
 {% block content %}
-<!-- insert html -->
+<div id="profile-header">
+    <h1 id="username">
+        <img id="profile-pic" src="{{ user.picture.url }}">
+        {{ user.username }}
+        {% if user.is_online == True %}
+        <img class="user-status" src="/static/img/icons/set2/online.png">
+        {% else %}
+        <img class="user-status" src="/static/img/icons/set2/offline.png">
+        {% endif %}
+    </h1>
+    <button id="add-user">add</button>
+    <button id="msg-user">message</button>
+    {% if user.is_booster == True %}
+    <button id="hire-user">hire</button>
+    {% endif %}
+</div>
+<div id="game-stats">
+    <h2 style="margin: 0;">Stats</h2>
+    <hr>
+    {% for stat in user_stats %}
+    <div class="stat-tab" onclick="showStats('{{ stat.game_title }}-stats')">{{ stat.game_title }}</div>
+    <div class="stat-table" id="{{ stat.game_title }}-stats" style="display: none;">
+        <table>
+            <tr>
+                <th>Hours Played</th>
+                <th>Level</th>
+            </tr>
+            <br>
+            <tr>
+                <td>{{ stat.hours_played }}</td>
+                <td>{{ stat.level }}</td>
+            </tr>
+        </table>
+    </div>
+    {% endfor %}
+</div>
 {% endblock %}
