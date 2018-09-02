@@ -19,17 +19,15 @@ Home page:
 - show name of game hyperlinked to a page about the game on top of picture in most played games feature
 
 Play page:
-- html creation
 - pull all users who are online and allow filtering by game, username
 - row in table should consist of user's profile pic, username, game being played, level in game, average wins, time online
 (will need to keep track in user model of all those fields)
 - allow sorting by username, game being played, average wins, time online
 
 Profile page:
-- html creation
-- display user's profile pic, username, status (online/offline), most played game
-- game stats section separated by game where each includes user's level, hours played, average wins, levels/hour
-- add user, message user and hire (if booster) buttons
+- add average wins and levels/hour to game stats section
+- add user, message user and hire (if booster) button functionalities 
+- improve stat table alignment
 
 Hire page:
 - html creation
