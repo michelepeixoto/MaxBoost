@@ -25,6 +25,7 @@ Play page:
 - allow sorting by username, game being played, average wins, time online
 
 Profile page:
+- load user from url
 - add average wins and levels/hour to game stats section
 - add user, message user and hire (if booster) button functionalities 
 - improve stat table alignment
