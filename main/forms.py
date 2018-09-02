@@ -27,7 +27,7 @@ class SignUpForm(forms.ModelForm):
                                                     'style': style}),
                    'password': forms.PasswordInput(attrs={'placeholder': 'password',
                                                           'style': style}),
-                   'password2': forms.PasswordInput(attrs={'placeholder': 'password2',
+                   'password2': forms.PasswordInput(attrs={'placeholder': 'repeat password',
                                                           'style': style})}
 
     def clean(self):

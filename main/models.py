@@ -10,10 +10,15 @@ class User(models.Model):
     email = models.EmailField(max_length=254, verbose_name='email')
     picture = models.ImageField(upload_to='profile_pics',
                                 default="/profile_pics/default_profile_pic.png")
-    #friends = models.CharField(max_length=800) should be a list
+    friends = models.TextField() # string of comma separated usernames
     is_online = models.BooleanField(default=False)
     time_online = models.FloatField(default="0.0") # amount in minutes
-    game_playing = models.CharField(max_length=500, blank=True)
+    game_playing = models.ForeignKey('Game',
+                                     db_column='title',
+                                     related_name='user_playing',
+                                     on_delete=models.PROTECT,
+                                     blank=True,
+                                     null=True)
     is_booster = models.BooleanField()
     hire_price = models.FloatField(default="0.00")
 

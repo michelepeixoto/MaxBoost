@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.conf.urls import url
+from django.conf.urls import url, re_path
 from main import views
 from django.conf import settings
 from django.views.static import serve
@@ -27,7 +27,7 @@ urlpatterns = [
     url(r'hire', views.hire),
     url(r'messages', views.messages),
     url(r'play', views.play),
-    url(r'profile/', views.profile),
+    re_path(r'profile/(?P<user_name>[a-zA-Z0-9~!@#$%^&*()_\-+={}\[\]|<>.]*)', views.profile),
 ]
 
 if settings.DEBUG:

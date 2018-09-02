@@ -58,32 +58,35 @@
         {% block content %}{% endblock %}
     </div>
     <div id="ppl-online" onclick="showOnline()">
-        <p>1 online</p><img src="/static/img/icons/set2/online.png" id="online-icon">
+        <p>{% if users_online %}
+            {{ users_online|length }}
+            {% else %}
+            -
+            {% endif %} online</p><img src="/static/img/icons/set2/online.png" id="online-icon">
     </div>
     <div id="show-online-btns">
         <img src="/static/img/icons/set2/N.png" id="online-clsBtn" onclick="hideOnline()" />
     </div>
     <div id="show-online">
         <h4>your list</h4>
-        <div id="no-list">
-            <p>sign in to view your list</p>
-        </div>
         <div id="your-list">
-            <p id="fr1">username</p>
-            <p id="fr2">longerusername</p>
-            <p id="fr3">uname</p>
-            <p id="fr4">muchevenlongerusername</p>
+            {% if friends_list %}
+            {% for friend in friends_list %}
+            <a href="/profile/{{ friend }}">
+                <p class="user">{{ friend }}</p>
+            </a>
+            {% endfor %}
+            {% else %}
+            <div class="no-friends">sign in to view your list</div>
+            {% endif %}
         </div>
         <h4>everyone</h4>
-        <div id="everyone">
-            <p id="prsn1">username</p>
-            <p id="prsn2">longerusername</p>
-            <p id="prsn3">uname</p>
-            <p id="prsn4">muchevenlongerusername</p>
-            <p id="prsn5">username</p>
-            <p id="prsn6">longerusername</p>
-            <p id="prsn7">uname</p>
-            <p id="prsn8">muchevenlongerusername</p>
+        <div id="all-online">
+            {% for user in users_online %}
+            <a href="/profile/{{ user }}">
+                <p class="user">{{ user }}</p>
+            </a>
+            {% endfor %}
         </div>
     </div>
 </body>

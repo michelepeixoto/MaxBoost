@@ -55,7 +55,7 @@ h2 {
 #menu {
     float: left;
     margin: 0;
-    width: 100%;
+    width: 94%;
     height: 36px;
     background-color: rgba(255, 255, 255, 0.6);
     border-style: solid;
@@ -164,21 +164,38 @@ h2 {
 /* show-online scroll bar -------------------- */
 
 #show-online p {
-    margin: 5px 5%;
+    margin: 3px 5%;
     background-color: #e9ffdb;
-    border-radius: 8px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: #bfe8a4;
+    border-width: thin;
     width: 90%;
     font-size: 70%
+}
+
+#show-online p:hover {
+    border-color: #e9ffdb;
 }
 
 #show-online h4 {
     margin: 0;
 }
 
-#no-list p {
+#show-online a {
+    text-decoration: none;
+    color: black;
+}
+
+#show-online a:visited {
+    color: black;
+}
+
+.no-friends {
     background-color: #bfe8a4;
-    color: #e9ffdb;
+    color: #f3ffed;
     font-size: 90%;
+    padding: 5px
 }
 
 #show-online-btns {
@@ -364,7 +381,7 @@ td, th {
 
 @media only screen and (max-width: 600px){
 
-    #menu li, p {
+    #menu li, #menu p {
         float: none;
         width: 15%;
         text-align: left;
