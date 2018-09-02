@@ -1,5 +1,3 @@
-var is_signedin = false;
-
 window.addEventListener('resize', function(event){
     var div = document.getElementById("page-width");
     div.innerHTML = window.innerWidth;
@@ -22,12 +20,6 @@ window.addEventListener('load', function(event){
 function showOnline(){
     document.getElementById("show-online").style.display = "inherit";
     document.getElementById("show-online-btns").style.display = "inherit";
-    if (is_signedin == true) {
-        document.getElementById("no-list").style.display = "none";
-    }
-    else {
-        document.getElementById("your-list").style.display = "none";
-    }
 }
 
 function hideOnline(){
@@ -50,8 +42,6 @@ function hideSignin(){
     document.getElementById("signin").style.display = "none";
     document.getElementById("signin-btn").style.backgroundColor = "transparent";
 }
-
-
 
 function moveItems(items, dir){
     var pic_urls = document.getElementById("game-pic-urls").innerHTML.replace(new RegExp("\\s", 'g'), "").split("game_pics");
@@ -81,4 +71,13 @@ function moveItems(items, dir){
             }
         }
     }
+}
+
+function showStats(stat_table){
+    stat_tables = document.getElementsByClassName("stat-table");
+    for (i=0; i<stat_tables.length; i++){
+        stat_tables[i].style.display = "none";
+    }
+    show_table = document.getElementById(stat_table);
+    show_table.style.display = "inherit";
 }

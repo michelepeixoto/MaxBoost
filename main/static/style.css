@@ -43,11 +43,6 @@ h2 {
 .submit-btn {
     border: none;
 }
-
-.error-msg {
-    color: red;
-    background-color: red;
-}
 /* general -------------------------------------------------------------- */
 
 
@@ -60,7 +55,12 @@ h2 {
 #menu {
     float: left;
     margin: 0;
-    width: 100%;
+    width: 94%;
+    height: 36px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-style: solid;
+    border-color: white;
+    border-width: thin;
 }
 
 #menu li {
@@ -102,9 +102,7 @@ h2 {
     width: 60px;
 }
 /* sign in ----------------------------------- */
-
 /* sign up style set in forms.py */
-
 /* menu ------------------------------------------------------------------ */
 
 
@@ -166,21 +164,38 @@ h2 {
 /* show-online scroll bar -------------------- */
 
 #show-online p {
-    margin: 5px 5%;
+    margin: 3px 5%;
     background-color: #e9ffdb;
-    border-radius: 8px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: #bfe8a4;
+    border-width: thin;
     width: 90%;
     font-size: 70%
+}
+
+#show-online p:hover {
+    border-color: #e9ffdb;
 }
 
 #show-online h4 {
     margin: 0;
 }
 
-#no-list p {
+#show-online a {
+    text-decoration: none;
+    color: black;
+}
+
+#show-online a:visited {
+    color: black;
+}
+
+.no-friends {
     background-color: #bfe8a4;
-    color: #e9ffdb;
+    color: #f3ffed;
     font-size: 90%;
+    padding: 5px
 }
 
 #show-online-btns {
@@ -252,8 +267,93 @@ h2 {
 #top-hir3, #most-pl3 {
     margin-right: 5%;
 }
-
 /* index ---------------------------------------------------------------- */
+
+/* profile -------------------------------------------------------------- */
+#profile-header {
+    padding: 0 60px 0 60px;
+    height: 150px;
+    padding: 30px;
+}
+
+#profile-header, #game-stats {
+    background-color: rgba(255, 255, 255, 0.6);
+    border-style: solid;
+    border-color: white;
+    border-width: thin;
+}
+
+#profile-pic {
+    width: 40px;
+    margin-right: 40px;
+}
+
+#username {
+    padding-top: 30px;
+}
+
+.user-status {
+    width: 20px;
+    margin-left: 20px;
+}
+
+.most-played {
+    height: 130px;
+    overflow: hidden;
+    padding: 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.most-played-border {
+    height: 180px;
+    transform: rotate(90deg);
+    margin: -25px;
+}
+
+#game-stats{
+    border-top: none;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.stat-tab {
+    float: left;
+    padding: 5px;
+    margin-right: 5%;
+    border-style: solid;
+    border-color: white;
+    border-width: thin;
+    border-radius: 10px;
+}
+
+.stat-tab:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.37);
+}
+
+#stat-table {
+    padding: 0 25%;
+    height: 200px;
+}
+
+.stat-table {
+    position: absolute;
+    margin-top: 30px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td, th {
+    border-style: none solid;
+    border-color: white;
+    border-width: thin;
+    padding: 10px 30px 20px 30px;
+}
+/* profile -------------------------------------------------------------- */
+
 
 
 /* responsiveness ------------------------------------------------------- */
@@ -281,7 +381,7 @@ h2 {
 
 @media only screen and (max-width: 600px){
 
-    #menu li, p {
+    #menu li, #menu p {
         float: none;
         width: 15%;
         text-align: left;
