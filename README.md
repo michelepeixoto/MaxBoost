@@ -3,11 +3,11 @@
 ### Website for boosters and gamers to connect
 
 #### Features:
-Most hired boosters and most played games will be featured in homepage
-Users who are online will be displayed for easier networking
-Boosters will be able to choose pricing for services
-All users will have profile pages
-Lookup of users by filters such as by game or by status (online/offline)
+- Most hired boosters and most played games will be featured in homepage
+- Users who are online will be displayed for easier networking
+- Boosters will be able to choose pricing for services
+- All users will have profile pages
+- Lookup of users by filters such as by game or by status (online/offline)
 
 
 #### Project checklists:
@@ -41,3 +41,8 @@ Messages page:
 - html creation
 - display list of messages where each row includes sender's profile pic, subject, date
 - read, reply, delete and new message buttons
+
+Settings page:
+- design/creation
+
+
