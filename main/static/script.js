@@ -1,5 +1,3 @@
-var is_signedin = false;
-
 window.addEventListener('resize', function(event){
     var div = document.getElementById("page-width");
     div.innerHTML = window.innerWidth;
@@ -22,12 +20,6 @@ window.addEventListener('load', function(event){
 function showOnline(){
     document.getElementById("show-online").style.display = "inherit";
     document.getElementById("show-online-btns").style.display = "inherit";
-    if (is_signedin == true) {
-        document.getElementById("no-list").style.display = "none";
-    }
-    else {
-        document.getElementById("your-list").style.display = "none";
-    }
 }
 
 function hideOnline(){
