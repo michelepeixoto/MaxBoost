@@ -15,7 +15,6 @@
 Home page:
 - sign in feature
 - different page look if signed in (show messages and profile buttons instead of sign in and sign up buttons)
-- pull list of users who are online to main page feature
 - show name of game hyperlinked to a page about the game on top of picture in most played games feature
 
 Play page:
@@ -25,7 +24,6 @@ Play page:
 - allow sorting by username, game being played, average wins, time online
 
 Profile page:
-- load user from url
 - add average wins and levels/hour to game stats section
 - add user, message user and hire (if booster) button functionalities 
 - improve stat table alignment
