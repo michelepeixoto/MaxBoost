@@ -24,21 +24,27 @@
 <div id="game-stats">
     <h2 style="margin: 0;">Stats</h2>
     <hr>
-    {% for stat in user_stats %}
-    <div class="stat-tab" onclick="showStats('{{ stat.game_title }}-stats')">{{ stat.game_title }}</div>
-    <div class="stat-table" id="{{ stat.game_title }}-stats" style="display: none;">
-        <table>
-            <tr>
-                <th>Hours Played</th>
-                <th>Level</th>
-            </tr>
-            <br>
-            <tr>
-                <td>{{ stat.hours_played }}</td>
-                <td>{{ stat.level }}</td>
-            </tr>
-        </table>
+    <div id="stat-table">
+        {% for stat in user_stats %}
+        <div class="stat-tab" onclick="showStats('{{ stat.game_title }}-stats')">
+            {{ stat.game_title }}
+        </div>
+        <div class="stat-table" id="{{ stat.game_title }}-stats" style="display: none;">
+            <table>
+                <tr>
+                    <th>Time Played</th>
+                    <th>Level</th>
+                    <th>Times Played</th>
+                </tr>
+                <br>
+                <tr>
+                    <td>{{ stat.hours_played }}</td>
+                    <td>{{ stat.level }}</td>
+                    <td>{{ stat.times_played }}</td>
+                </tr>
+            </table>
+        </div>
+        {% endfor %}
     </div>
-    {% endfor %}
 </div>
 {% endblock %}

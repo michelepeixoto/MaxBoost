@@ -53,7 +53,7 @@ def profile(request):
     most_played = ""
     for stat in user_stats:
         game_count = stat.times_played
-        if game_count > highest_game_count:
+        if game_count >= highest_game_count:
             highest_game_count = game_count
             most_played = stat.game_title
     most_played = Game.objects.get(title=most_played).picture

@@ -30,11 +30,18 @@ class Game(models.Model):
 
 
 class GameStat(models.Model):
+    PLATFORM_CHOICES = (
+        ('1', 'PS4'),
+        ('2', 'Xbox One'),
+        ('3', 'PC'),
+        ('4', 'Switch')
+    )
     game_title = models.ForeignKey('Game',
                                    db_column='title',
                                    related_name='stat',
                                    on_delete=models.PROTECT)
     username = models.CharField(max_length=22)
+    platform = models.CharField(max_length=1, choices=PLATFORM_CHOICES)
     times_played = models.IntegerField()
     hours_played = models.DurationField()
     level = models.CharField(max_length=22)
