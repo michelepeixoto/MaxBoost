@@ -17,14 +17,22 @@ window.addEventListener('load', function(event){
     }
 });
 
+function showElement(element_id){
+    document.getElementById(element_id).style.display = "inherit";
+}
+
+function hideElement(element_id){
+    document.getElementById(element_id).style.display = "none";
+}
+
 function showOnline(){
-    document.getElementById("show-online").style.display = "inherit";
-    document.getElementById("show-online-btns").style.display = "inherit";
+    showElement("show-online");
+    showElement("show-online-btns");
 }
 
 function hideOnline(){
-    document.getElementById("show-online").style.display = "none";
-    document.getElementById("show-online-btns").style.display = "none";
+    hideElement("show-online");
+    hideElement("show-online-btns");
 }
 
 function showSignin(){
@@ -39,7 +47,7 @@ function showSignin(){
 }
 
 function hideSignin(){
-    document.getElementById("signin").style.display = "none";
+    hideElement("signin");
     document.getElementById("signin-btn").style.backgroundColor = "transparent";
 }
 

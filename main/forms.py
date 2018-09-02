@@ -20,15 +20,24 @@ class SignUpForm(forms.ModelForm):
                 'border: none;' \
                 'width: 100%;'
         model = User
-        fields = ['username', 'email', 'password', 'password2']
+        fields = ['username', 'email', 'password', 'password2', 'is_booster', 'hire_price']
         widgets = {'username': forms.TextInput(attrs={'placeholder': 'username',
+                                                      'id': 'username',
                                                       'style': style}),
                    'email': forms.EmailInput(attrs={'placeholder': 'email',
+                                                    'id': 'email',
                                                     'style': style}),
                    'password': forms.PasswordInput(attrs={'placeholder': 'password',
+                                                          'id': 'password1',
                                                           'style': style}),
                    'password2': forms.PasswordInput(attrs={'placeholder': 'repeat password',
-                                                          'style': style})}
+                                                           'id': 'password2',
+                                                          'style': style}),
+                   'is_booster': forms.CheckboxInput(attrs={'id': 'is_booster',
+                                                            'style': 'font-size: 400%; '
+                                                                     'margin-bottom: 30px;'}),
+                   'hire_price': forms.NumberInput(attrs={'id': 'hire_price',
+                                                          'style': style + 'display: none;'})}
 
     def clean(self):
         cleaned_data = super().clean()

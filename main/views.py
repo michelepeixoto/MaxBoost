@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .forms import SignInForm, SignUpForm, PlayForm
 from .models import Game, User, GameStat
 
@@ -40,8 +40,7 @@ def signup(request):
         signin_form = SignInForm(request.POST)
         if signup_form.is_valid():
             signup_form.save()
-            return render(request, 'signup.html', {'signup_form': signup_form,
-                                                   'signin_form': signin_form})
+            return redirect('/profile/{}'.format(signup_form.cleaned_data['username']))
     else:
         signup_form = SignUpForm()
         signin_form = SignInForm()
