@@ -8,6 +8,8 @@
     <link href="https://fonts.googleapis.com/css?family=Advent+Pro|Fira+Sans+Extra+Condensed|Julius+Sans+One|PT+Sans|Tajawal|Titillium+Web" rel="stylesheet">
     <link href="{% static 'style.css' %}" rel="stylesheet"/>
     <script src="{% static 'script.js' %}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    {% block js %}{% endblock %}
 </head>
 <body {% if most_played %} style="background-image: url('/media/{{ most_played }}');
                                 background-size: cover;
@@ -57,7 +59,7 @@
     <div id="content">
         {% block content %}{% endblock %}
     </div>
-    <div id="ppl-online" onclick="showOnline()">
+    <div id="show-online-top" onclick="showOnline()">
         <p>{% if users_online %}
             {{ users_online|length }}
             {% else %}
@@ -72,8 +74,8 @@
         <div id="your-list">
             {% if friends_list %}
             {% for friend in friends_list %}
-            <a href="/profile/{{ friend }}">
-                <p class="user">{{ friend }}</p>
+            <a href="/profile/{{ friend }}" {% if friend not in users_online %}class="user-offline"{% endif %}>
+                <p>{{ friend }}</p>
             </a>
             {% endfor %}
             {% else %}
@@ -84,7 +86,7 @@
         <div id="all-online">
             {% for user in users_online %}
             <a href="/profile/{{ user }}">
-                <p class="user">{{ user }}</p>
+                <p>{{ user }}</p>
             </a>
             {% endfor %}
         </div>

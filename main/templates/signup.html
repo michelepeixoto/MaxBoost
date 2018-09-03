@@ -3,13 +3,45 @@
 
 {% block title %} - Sign Up{% endblock %}
 
+{% block js %}
+<script>
+    function showHirePrice(){
+        var is_booster_checkbox = document.getElementById('is_booster')
+        if (is_booster_checkbox.checked){
+            showElement('hire_price');
+            showElement('hire_price_label');
+        }
+        else {
+            hideElement('hire_price');
+            hideElement('hire_price_label');
+        }
+    }
+
+    $(document).ready(function() {
+        $('#is_booster').change(showHirePrice);
+    });
+</script>
+{% endblock %}
+
 {% block content %}
 <form id="signup-form" action="/signup" method="post">
     {% csrf_token %}
     {% for field in signup_form %}
-        <div class="form-field">
-            {{ field }}
-        </div>
+    {% if field.name == 'is_booster' %}
+    <label style="font-size: x-large;">Are you a booster?</label>
+    <div class="form-field">
+        {{ field }}
+    </div>
+    {% elif field.name == 'hire_price' %}
+    <label id="hire_price_label" style="font-size: x-large; display: none;">Hire Price</label>
+    <div class="form-field">
+        {{ field }}
+    </div>
+    {% else %}
+    <div class="form-field">
+        {{ field }}
+    </div>
+    {% endif %}
     {% endfor %}
     <button type="submit" class="submit-btn">
         <img src="static/img/icons/set2/Y.png" class="y-btn">
