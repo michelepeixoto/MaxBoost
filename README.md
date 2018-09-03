@@ -13,9 +13,12 @@
 #### Project checklists:
 
 Home page:
-- sign in feature
+- sign in feature that saves user signed in as a variable to use when loading pages
 - different page look if signed in (show messages and profile buttons instead of sign in and sign up buttons)
 - show name of game hyperlinked to a page about the game on top of picture in most played games feature
+
+Sign Up page:
+- add more options to hire price (per hour/level)
 
 Play page:
 - pull all users who are online and allow filtering by game, username
@@ -27,6 +30,8 @@ Profile page:
 - add average wins and levels/hour to game stats section
 - add user, message user and hire (if booster) button functionalities 
 - improve stat table alignment
+- add feature to click on profile pic to show zoomed in version
+- show settings button instead of add/message/hire buttons if profile belongs to user signed in
 
 Hire page:
 - html creation
@@ -43,5 +48,8 @@ Messages page:
 
 Settings page:
 - design/creation
+
+General: 
+- make sure sign in form and online list load from all pages
 
 

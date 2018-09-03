@@ -59,7 +59,7 @@
     <div id="content">
         {% block content %}{% endblock %}
     </div>
-    <div id="ppl-online" onclick="showOnline()">
+    <div id="show-online-top" onclick="showOnline()">
         <p>{% if users_online %}
             {{ users_online|length }}
             {% else %}
@@ -74,8 +74,8 @@
         <div id="your-list">
             {% if friends_list %}
             {% for friend in friends_list %}
-            <a href="/profile/{{ friend }}">
-                <p class="user">{{ friend }}</p>
+            <a href="/profile/{{ friend }}" {% if friend not in users_online %}class="user-offline"{% endif %}>
+                <p>{{ friend }}</p>
             </a>
             {% endfor %}
             {% else %}
@@ -86,7 +86,7 @@
         <div id="all-online">
             {% for user in users_online %}
             <a href="/profile/{{ user }}">
-                <p class="user">{{ user }}</p>
+                <p>{{ user }}</p>
             </a>
             {% endfor %}
         </div>

@@ -55,7 +55,7 @@ h2 {
 #menu {
     float: left;
     margin: 0;
-    width: 94%;
+    width: 97%;
     height: 36px;
     background-color: rgba(255, 255, 255, 0.6);
     border-style: solid;
@@ -107,7 +107,7 @@ h2 {
 
 
 /* online ---------------------------------------------------------------- */
-#ppl-online, #show-online {
+#show-online-top, #show-online {
     width: 160px;
     height: 30px;
     background-color: #bfe8a4;
@@ -119,11 +119,11 @@ h2 {
     left: 5%;
 }
 
-#ppl-online {
+#show-online-top {
     cursor: pointer;
 }
 
-#ppl-online p {
+#show-online-top p {
     float: left;
     margin-top: 3px;
     margin-left: 20px;
@@ -176,6 +176,14 @@ h2 {
 
 #show-online p:hover {
     border-color: #e9ffdb;
+}
+
+.user-offline p {
+    background-color: #ffeff3;
+}
+
+.user-offline p:hover {
+    border-color: #ffeff3;
 }
 
 #show-online h4 {
@@ -272,8 +280,7 @@ h2 {
 /* profile -------------------------------------------------------------- */
 #profile-header {
     padding: 0 60px 0 60px;
-    height: 150px;
-    padding: 30px;
+    height: 200px;
 }
 
 #profile-header, #game-stats {
@@ -284,12 +291,11 @@ h2 {
 }
 
 #profile-pic {
-    width: 40px;
+    width: 80px;
     margin-right: 40px;
 }
 
 #username {
-    padding-top: 30px;
 }
 
 .user-status {
@@ -297,18 +303,7 @@ h2 {
     margin-left: 20px;
 }
 
-.most-played {
-    height: 130px;
-    overflow: hidden;
-    padding: 0;
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-
-.most-played-border {
-    height: 180px;
-    transform: rotate(90deg);
-    margin: -25px;
+#profile-btns {
 }
 
 #game-stats{
@@ -404,12 +399,12 @@ td, th {
         margin-right: 1%;
     }
 
-    #ppl-online {
+    #show-online-top {
         width: 120px;
         height: 24px;
     }
 
-    #ppl-online p {
+    #show-online-top p {
         margin-top: 0;
     }
 
